@@ -20,7 +20,7 @@ public class DbUser {
  * @param userID - primary key from database. Must be type long
  * @return Bhuser
  */
-	public static Bhuser getUser(long userID)
+	public static Bhuser getUser(int userID)
 	{
 		EntityManager em = DbUtil.getEmFactory().createEntityManager();
 		Bhuser user = em.find(Bhuser.class, userID);
@@ -200,5 +200,9 @@ public class DbUser {
 		return result;
 			
 	}
+	
+//	public static boolean isValidUser(String email, String password){
+//		return true;
+//	}
 	
 }
