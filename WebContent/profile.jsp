@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Profile</title>
+<jsp:include page="bootstrap.jsp"></jsp:include>
 </head>
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include>

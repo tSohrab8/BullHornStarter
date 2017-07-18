@@ -31,6 +31,14 @@ public class Home extends HttpServlet {
 		
 		//set the message in the next jsp 		
 	    session.setAttribute("message", message);
+	    
+	  //make sure a user is in the session. If they don't exist then go back to the login page.
+	    if (session.getAttribute("user")==null){
+	        //http://stackoverflow.com/questions/13638446/checking-servlet-session-attribute-value-in-jsp-file
+	        nextURL = "/login.jsp";
+	        response.sendRedirect(request.getContextPath() + nextURL);
+	        return;//return prevents an error; Don't believe me? Take it out.
+	    }
 		
 		getServletContext().getRequestDispatcher(nextURL).forward(request,response);
 	}

@@ -54,6 +54,10 @@ public class LoginServlet extends HttpServlet {
 		//And while you're at it... what is the meaning of life?
 		if (DbUser.isValidUser(email,password)){
 			//add the valid user to the session
+			int size = 200;
+			String gravatarURL = DbUser.getGravatarURL(email, size);
+			System.out.println(gravatarURL);
+			session.setAttribute("gravatarURL", gravatarURL);
 			session.setAttribute("user", DbUser.getUserByEmail(email));
 			nextPage = "/home.jsp";
 		}else{

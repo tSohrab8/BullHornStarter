@@ -4,18 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Welcome to Bullhorn</title>
+<title>Registration Portal</title>
 </head>
 <body>
-<h1>Login Page</h1>
 
-<form action="LoginServlet" method="post">
-	Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email" value="larry12345@gmail.com"><br/>
-	Password:&nbsp;<input type="password" name="password" value="password"><br/>
+<form action="RegisterServlet" method="post">
+	Name: <input type="text" name="name"><br/>
+	Email: <input type="text" name="email"><br/>
+	Password: <input type="password" name="password"><br/>
+	Motto: <input type="text" name="motto"><br/>
+	
 	<input type="hidden" name="action" value="login">
 	<input type="submit" value="Log In">
 </form>
-<p/>
-<a href="register.jsp">Don't have an account? Click here to sign up! It's free!</a>
+
+${message}
+
 </body>
 </html>
